@@ -11,7 +11,7 @@ public class GreenPlayer : Player
         base.speed = 50;
         base.lifePoints = 3;
 
-        transform.position = new Vector3(25,0.7f,-47);
+        base.SetPlayerPostion(new Vector3(25,0.7f,-47));
     }
 
     // Update is called once per frame

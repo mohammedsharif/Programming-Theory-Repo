@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject player;
-    public float horizontalInput;
-    public float turnSpeed = 50f;
+    [SerializeField] GameObject player;
+    private float horizontalInput;
+    [SerializeField] float turnSpeed = 50f;
 
     // Update is called once per frame
     private void Update() 

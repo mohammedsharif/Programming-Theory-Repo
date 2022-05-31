@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public int lifePoints = 6;
-    public Rigidbody playerRb;
-    public GameObject focalPoint;
-    public float verticalInput;
+    [SerializeField]
+    private float m_speed;
+    public float speed 
+    {
+        get{return m_speed;}
+        set{
+            if (value >= 0)
+                m_speed = value;
+            else 
+                Debug.Log("Negative speed not allowed");
+            }
+    }
 
-    public virtual void IntializeVariables()
+    protected int lifePoints = 6;
+    protected Rigidbody playerRb;
+    [SerializeField] protected GameObject focalPoint;
+    protected float verticalInput;
+
+    protected virtual void IntializeVariables()
     {
         playerRb = GetComponent<Rigidbody>();
     }
 
-    public void Move()
+    protected void SetPlayerPostion(Vector3 position)
+    {
+        transform.position = position;
+    } 
+
+    protected void Move()
     {
         verticalInput = Input.GetAxis("Vertical");
         
