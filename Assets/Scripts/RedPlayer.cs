@@ -7,7 +7,7 @@ public class RedPlayer : Player
     // Start is called before the first frame update
     void Start()
     {
-        base.intializeVariables();
+        base.IntializeVariables();
         base.speed = 25;
         base.lifePoints = 6;
     }
@@ -15,6 +15,6 @@ public class RedPlayer : Player
     // Update is called once per frame
     void Update()
     {
-        base.move();
+        base.Move();
     }
 }
